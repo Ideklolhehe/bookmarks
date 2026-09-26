@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fabric House — Components AI Theme V1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Core semantic colors */
+      --color-background: #F4F0E7;
+      --color-surface: #FBFAF7;
+      --color-text: #202426;
+      --color-text-muted: #66635E;
+      --color-primary: #273B46;
+      --color-brand-blue: #667F8A;
+      --color-sage: #87907D;
+      --color-clay-rose: #B78379;
+      --color-stone: #B8AEA0;
+      --color-border: #D8D1C7;
+      --color-white: #FBFAF7;
+      --color-black: #202426;
+
+      /* Antique Blue scale */
+      --blue-50: #F4F7F7;
+      --blue-100: #E5ECEE;
+      --blue-200: #CCDADC;
+      --blue-300: #ADC4C8;
+      --blue-400: #87A8AE;
+      --blue-500: #667F8A;
+      --blue-600: #536A74;
+      --blue-700: #435660;
+      --blue-800: #35454E;
+      --blue-900: #273B46;
+      --blue-950: #18272F;
+
+      /* Neutral / Ivory scale */
+      --neutral-50: #FCFBF8;
+      --neutral-100: #F7F4EE;
+      --neutral-200: #EEE9DF;
+      --neutral-300: #DED5C7;
+      --neutral-400: #C8BBAB;
+      --neutral-500: #A99B8C;
+      --neutral-600: #81766C;
+      --neutral-700: #625A53;
+      --neutral-800: #45413D;
+      --neutral-900: #2B2A28;
+      --neutral-950: #1B1B1A;
+
+      /* Deep Ink scale */
+      --ink-50: #F4F6F6;
+      --ink-100: #E6EAEB;
+      --ink-200: #CDD5D8;
+      --ink-300: #AEBCC1;
+      --ink-400: #81949C;
+      --ink-500: #5A707A;
+      --ink-600: #465A64;
+      --ink-700: #354A55;
+      --ink-800: #273B46;
+      --ink-900: #202F37;
+      --ink-950: #152229;
+
+      /* Accent colors */
+      --sage-500: #87907D;
+      --sage-light: #D8DCCE;
+      --sage-dark: #5D6757;
+      --rose-500: #B78379;
+      --rose-light: #E7D2CD;
+      --rose-dark: #815C55;
+      --warm-stone: #B8AEA0;
+      --soft-stone: #E5DFD6;
+
+      /* Typography */
+      --font-display: "Bodoni Moda", Didot, "Times New Roman", serif;
+      --font-body: "Manrope", Arial, sans-serif;
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+
+      /* Type scale */
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 16px;
+      --text-lg: 18px;
+      --text-xl: 22px;
+      --text-2xl: 28px;
+      --text-3xl: 36px;
+      --text-4xl: 48px;
+      --text-5xl: 64px;
+      --text-6xl: 80px;
+      --text-display: 96px;
+
+      /* Spacing */
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+      --space-9: 96px;
+      --space-10: 128px;
+      --space-11: 160px;
+
+      /* Radius */
+      --radius-0: 0px;
+      --radius-1: 2px;
+      --radius-2: 4px;
+      --radius-3: 8px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-0: none;
+      --shadow-1: 0 1px 2px rgba(32,36,38,.05);
+      --shadow-2: 0 8px 24px rgba(32,36,38,.07);
+      --shadow-3: 0 18px 50px rgba(32,36,38,.09);
+
+      /* Borders */
+      --border-default: 1px solid #D8D1C7;
+      --border-subtle: 1px solid #E5DFD6;
+      --border-dark: 1px solid #273B46;
+    }
+
+    @media (max-width: 767px) {
+      :root {
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-base: 16px;
+        --text-lg: 18px;
+        --text-xl: 21px;
+        --text-2xl: 26px;
+        --text-3xl: 32px;
+        --text-4xl: 40px;
+        --text-5xl: 50px;
+        --text-6xl: 60px;
+        --text-display: 68px;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 64px; }
+    .eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(50px, 8vw, 80px);
+      line-height: .98;
+      letter-spacing: -.025em;
+      margin: 0 0 24px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: var(--text-4xl);
+      line-height: 1.08;
+      letter-spacing: -.018em;
+      margin: 0 0 16px;
+    }
+    p { max-width: 680px; color: var(--color-text-muted); }
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap: 0;
+      margin: 64px 0;
+      border: var(--border-default);
+    }
+    .swatch { min-height: 120px; padding: 16px; display: flex; align-items: end; font-size: 12px; }
+    .btn {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border: var(--border-dark);
+      border-radius: var(--radius-1);
+      padding: 14px 24px;
+      font: 600 14px/1 var(--font-body);
+      letter-spacing: .025em;
+      text-decoration: none;
+    }
+    .rule { border: 0; border-top: var(--border-default); margin: 96px 0; }
+    .spec {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .card {
+      border-top: var(--border-default);
+      padding-top: 16px;
+    }
+    @media (max-width:767px) {
+      .wrap { padding: 32px 20px; }
+      .palette { grid-template-columns: repeat(2,1fr); }
+      .spec { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">Fabric House · Theme V1</div>
+    <h1>Original textile design, developed into fabric.</h1>
+    <p>Editorial textile-house identity: warm, tactile, refined and contemporary. This page exposes the CSS design tokens intended for Components AI theme import.</p>
+
+    <section class="palette" aria-label="Core palette">
+      <div class="swatch" style="background:#F4F0E7">Fabric Ivory<br>#F4F0E7</div>
+      <div class="swatch" style="background:#FBFAF7">Soft White<br>#FBFAF7</div>
+      <div class="swatch" style="background:#667F8A;color:#fff">Antique Blue<br>#667F8A</div>
+      <div class="swatch" style="background:#273B46;color:#fff">Deep Indigo<br>#273B46</div>
+      <div class="swatch" style="background:#87907D;color:#fff">Herbarium Sage<br>#87907D</div>
+      <div class="swatch" style="background:#B78379;color:#fff">Clay Rose<br>#B78379</div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="spec">
+      <div class="card">
+        <div class="eyebrow">Typography</div>
+        <h2>Bodoni Moda + Manrope</h2>
+        <p>Display: Bodoni Moda 500. Body and UI: Manrope 400/500/600.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Interface</div>
+        <h2>Sharp, quiet, editorial.</h2>
+        <p>0–4px radius, almost no shadow, 1px rules, generous whitespace, textile imagery as the visual focus.</p>
+        <a class="btn" href="#">Explore the textile</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
